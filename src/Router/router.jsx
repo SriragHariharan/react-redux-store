@@ -4,13 +4,15 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import RootLayout from "../layouts/RootLayout";
 
 //pages
-import Homepage from "../pages/Homepage";
+import ProductDetails from "../components/ProductDetails";
+import ProductsList from "../components/ProductsList";
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
-      <Route index element={<Homepage />} />
+        <Route index element={<ProductsList />} />
+        <Route path='product/:id' element={<ProductDetails/>} />
     </Route>
   )
 );
